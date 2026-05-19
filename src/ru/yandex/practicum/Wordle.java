@@ -39,9 +39,9 @@ public class Wordle {
                 printWriter.println(exception.getMessage());
                 printWriter.println("-----------------------");
 
-            } catch (IOException ignored) {}
-
+            } catch (IOException ignored) {
+                
+            }
         }
     }
-
 }
