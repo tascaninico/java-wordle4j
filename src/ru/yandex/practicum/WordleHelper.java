@@ -27,7 +27,7 @@ public class WordleHelper {
             char letter = guess.charAt(i);
             char mark = result.charAt(i);
 
-            if (mark == '+'){
+            if (mark == '+') {
                 requiredLetters.add(letter);
                 fixedPositions.put(i, letter);
             } else if (mark == '^') {
@@ -58,7 +58,7 @@ public class WordleHelper {
 
         for (char requiredletter: requiredLetters) {
 
-            if (word.indexOf(requiredletter) == -1){
+            if (word.indexOf(requiredletter) == -1) {
                 return false;
             }
         }
@@ -78,8 +78,8 @@ public class WordleHelper {
 
             Set<Character> letters = entry.getValue();
 
-            for (char letter : letters){
-                if (word.charAt(position) == letter){
+            for (char letter : letters) {
+                if (word.charAt(position) == letter) {
                     return false;
                 }
             }
