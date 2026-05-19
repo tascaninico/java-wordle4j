@@ -40,7 +40,6 @@ public class Wordle {
                 printWriter.println("-----------------------");
 
             } catch (IOException ignored) {
-                
             }
         }
     }
