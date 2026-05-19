@@ -14,7 +14,7 @@ public class WordleDictionary {
     private List<String> words = new ArrayList<>();
 
     public boolean addWord(String word) {
-        if (words.contains(word)){
+        if (words.contains(word)) {
             return false;
         } else {
             words.add(word);
@@ -26,7 +26,7 @@ public class WordleDictionary {
     public void printAllWords() {
 
         System.out.println(words.size());
-        for (String word : words){
+        for (String word : words) {
             System.out.println(word);
         }
     }
