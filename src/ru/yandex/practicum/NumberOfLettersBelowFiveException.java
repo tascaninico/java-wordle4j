@@ -1,12 +1,12 @@
 package ru.yandex.practicum;
 
-public class NumberOfLettersBelowFiveException extends Exception{
+public class NumberOfLettersBelowFiveException extends Exception {
 
-    public NumberOfLettersBelowFiveException(){
+    public NumberOfLettersBelowFiveException() {
         super();
     }
 
-    public NumberOfLettersBelowFiveException(String message){
+    public NumberOfLettersBelowFiveException(String message) {
         super(message);
     }
 

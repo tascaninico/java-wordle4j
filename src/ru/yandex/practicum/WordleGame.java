@@ -27,28 +27,28 @@ public class WordleGame {
 
     private final WordleHelper wordleHelper;
 
-    public WordleGame(String answer, int steps, WordleDictionary dictionary){
+    public WordleGame(String answer, int steps, WordleDictionary dictionary) {
         this.answer = answer;
         this.steps = steps;
         this.dictionary = dictionary;
         this.wordleHelper = new WordleHelper(dictionary.getWords());
     }
 
-    public String compareToAnswer(String word){
+    public String compareToAnswer(String word) {
 
         StringBuilder stringBuilder = new StringBuilder();
 
         if (word.equals(answer))
             return "Победа";
 
-        for (int i = 0; i < answer.length(); ++i){
+        for (int i = 0; i < answer.length(); ++i) {
 
-            if (word.charAt(i) == answer.charAt(i)){
+            if (word.charAt(i) == answer.charAt(i)) {
                 stringBuilder.append("+");
                 continue;
             }
 
-            if (answer.indexOf(word.charAt(i)) != -1){
+            if (answer.indexOf(word.charAt(i)) != -1) {
                 stringBuilder.append("^");
             } else {
                 stringBuilder.append("-");
@@ -61,7 +61,7 @@ public class WordleGame {
 
         String guess = "";
 
-        for (int i = 0; i < steps; ++i){
+        for (int i = 0; i < steps; ++i) {
 
             do {
                 try {
@@ -80,7 +80,7 @@ public class WordleGame {
                     }
 
                 } catch (NoWordInDictionaryException | NumberOfLettersBelowFiveException
-                | NumberOfLettersAboveFiveException exc){
+                | NumberOfLettersAboveFiveException exc) {
 
                             errorWriter.println("Ошибка:");
                             errorWriter.println(exc.getMessage());

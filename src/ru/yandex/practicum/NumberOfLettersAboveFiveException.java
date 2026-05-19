@@ -2,11 +2,11 @@ package ru.yandex.practicum;
 
 public class NumberOfLettersAboveFiveException extends Exception {
 
-    public NumberOfLettersAboveFiveException(){
+    public NumberOfLettersAboveFiveException() {
         super();
     }
 
-    public NumberOfLettersAboveFiveException(String message){
+    public NumberOfLettersAboveFiveException(String message) {
         super(message);
     }
 

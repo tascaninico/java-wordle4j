@@ -16,13 +16,13 @@ public class WordleHelper {
 
     private final Random random = new Random();
 
-    public WordleHelper(List<String> dictionary){
+    public WordleHelper(List<String> dictionary) {
         this.dictionary = dictionary;
     }
 
-    public void addGuess(String guess, String result){
+    public void addGuess(String guess, String result) {
 
-        for (int i = 0; i < guess.length(); ++i){
+        for (int i = 0; i < guess.length(); ++i) {
 
             char letter = guess.charAt(i);
             char mark = result.charAt(i);
@@ -30,10 +30,10 @@ public class WordleHelper {
             if (mark == '+'){
                 requiredLetters.add(letter);
                 fixedPositions.put(i, letter);
-            } else if (mark == '^'){
+            } else if (mark == '^') {
                 requiredLetters.add(letter);
 
-                if (!wrongPositions.containsKey(i)){
+                if (!wrongPositions.containsKey(i)) {
                    wrongPositions.put(i, new HashSet<>());
                 }
 
@@ -41,29 +41,29 @@ public class WordleHelper {
 
             } else if (mark == '-') {
 
-                if (!requiredLetters.contains(letter)){
+                if (!requiredLetters.contains(letter)) {
                     bannedLetters.add(letter);
                 }
             }
         }
     }
 
-    private boolean isSuitable(String word){
+    private boolean isSuitable(String word) {
 
-        for (char bannedLetter : bannedLetters){
+        for (char bannedLetter : bannedLetters) {
 
             if (word.indexOf(bannedLetter) != -1)
                 return false;
         }
 
-        for (char requiredletter: requiredLetters){
+        for (char requiredletter: requiredLetters) {
 
             if (word.indexOf(requiredletter) == -1){
                 return false;
             }
         }
 
-        for (Map.Entry<Integer, Character> entry : fixedPositions.entrySet()){
+        for (Map.Entry<Integer, Character> entry : fixedPositions.entrySet()) {
 
             int position = entry.getKey();
             char letter = entry.getValue();
@@ -72,7 +72,7 @@ public class WordleHelper {
                 return false;
         }
 
-        for (Map.Entry<Integer, Set<Character>> entry : wrongPositions.entrySet()){
+        for (Map.Entry<Integer, Set<Character>> entry : wrongPositions.entrySet()) {
 
             int position = entry.getKey();
 

@@ -16,20 +16,20 @@ import java.util.Arrays;
  */
 public class WordleDictionaryLoader {
 
-    public static WordleDictionary downloadDictionaryFromFile(String filename, int theLengthOfWord){
+    public static WordleDictionary downloadDictionaryFromFile(String filename, int theLengthOfWord) {
 
         WordleDictionary wordleDictionary = new WordleDictionary();
 
-        try (BufferedReader bufferedReader = Files.newBufferedReader(Path.of(filename), StandardCharsets.UTF_8)){
+        try (BufferedReader bufferedReader = Files.newBufferedReader(Path.of(filename), StandardCharsets.UTF_8)) {
 
             String word;
-            while((word = bufferedReader.readLine()) != null){
+            while((word = bufferedReader.readLine()) != null) {
                 if (word.length() == theLengthOfWord) {
                     wordleDictionary.addWord(word);
                 }
             }
 
-        } catch (IOException exc){
+        } catch (IOException exc) {
             throw new RuntimeException("Возникли проблемы с чтением данных из словаря");
         }
 

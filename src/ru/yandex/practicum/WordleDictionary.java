@@ -13,7 +13,7 @@ public class WordleDictionary {
 
     private List<String> words = new ArrayList<>();
 
-    public boolean addWord(String word){
+    public boolean addWord(String word) {
         if (words.contains(word)){
             return false;
         } else {
@@ -23,7 +23,7 @@ public class WordleDictionary {
     }
 
 
-    public void printAllWords(){
+    public void printAllWords() {
 
         System.out.println(words.size());
         for (String word : words){
@@ -31,19 +31,19 @@ public class WordleDictionary {
         }
     }
 
-    public boolean containsWord(String word){
+    public boolean containsWord(String word) {
         return words.contains(word);
     }
 
-    public int size(){
+    public int size() {
         return words.size();
     }
 
-    public String get(int num){
+    public String get(int num) {
         return words.get(num);
     }
 
-    public String chooseTheWord(){
+    public String chooseTheWord() {
 
         Random random = new Random();
 

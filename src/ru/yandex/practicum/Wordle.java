@@ -30,16 +30,16 @@ public class Wordle {
             wordleGame.startTheGame(scanner, out, errorWriter);
 
         } catch (IOException
-                exception){
+                exception) {
 
             try (FileWriter fileWriter = new FileWriter("errors.txt", true);
-                 PrintWriter printWriter = new PrintWriter(fileWriter)){
+                 PrintWriter printWriter = new PrintWriter(fileWriter)) {
 
                 printWriter.println("Ошибка:");
                 printWriter.println(exception.getMessage());
                 printWriter.println("-----------------------");
 
-            } catch (IOException ignored){
+            } catch (IOException ignored) {
                 
             }
 
