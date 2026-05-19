@@ -15,7 +15,7 @@ public class WordleDictionaryLoader {
         try (BufferedReader bufferedReader = Files.newBufferedReader(Path.of(filename), StandardCharsets.UTF_8)) {
 
             String word;
-            while((word = bufferedReader.readLine()) != null) {
+            while ((word = bufferedReader.readLine()) != null) {
                 if (word.length() == theLengthOfWord) {
                     wordleDictionary.addWord(word);
                 }
