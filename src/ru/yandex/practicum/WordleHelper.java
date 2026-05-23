@@ -1,6 +1,12 @@
 package ru.yandex.practicum;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.ArrayList;
 
 public class WordleHelper {
 
@@ -48,6 +54,33 @@ public class WordleHelper {
         }
     }
 
+    public List<String> getPossibleWords() {
+
+        List<String> possibleWords = new ArrayList<>();
+
+        for (String word : dictionary) {
+
+            if (isSuitable(word)) {
+                possibleWords.add(word);
+            }
+        }
+
+        return possibleWords;
+    }
+
+    public String getHint() {
+
+        List<String> possibleWords = getPossibleWords();
+
+        if (possibleWords.isEmpty()) {
+            return dictionary.get(random.nextInt(dictionary.size()));
+        }
+
+        int randomIndex = random.nextInt(possibleWords.size());
+
+        return possibleWords.get(randomIndex);
+    }
+
     private boolean isSuitable(String word) {
 
         for (char bannedLetter : bannedLetters) {
@@ -86,32 +119,4 @@ public class WordleHelper {
         }
         return true;
     }
-
-    public List<String> getPossibleWords() {
-
-        List<String> possibleWords = new ArrayList<>();
-
-        for (String word : dictionary) {
-
-            if (isSuitable(word)) {
-                possibleWords.add(word);
-            }
-        }
-
-        return possibleWords;
-    }
-
-    public String getHint() {
-
-        List<String> possibleWords = getPossibleWords();
-
-        if (possibleWords.isEmpty()) {
-            return dictionary.get(random.nextInt(dictionary.size()));
-        }
-
-        int randomIndex = random.nextInt(possibleWords.size());
-
-        return possibleWords.get(randomIndex);
-    }
-
 }

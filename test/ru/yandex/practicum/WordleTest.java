@@ -1,13 +1,11 @@
 package ru.yandex.practicum;
 
 import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Scanner;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class WordleTest {
 
